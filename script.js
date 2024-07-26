@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             return;
         }
 
-        // Generate a random 6-digit OTP
+     
         var otp = Math.floor(100000 + Math.random() * 900000);
-        // Store the OTP for later validation
+       
         sessionStorage.setItem('otp', otp);
 
         var templateParams = {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         emailjs.send("service_4x7589r", "template_s5v1m5u", templateParams)
             .then(function(response) {
                 alert("OTP sent successfully to your email!");
-                document.getElementById("otp-section").style.display = 'block'; // Show OTP input section
+                document.getElementById("otp-section").style.display = 'block'; 
             }, function(error) {
                 alert("Failed to send OTP.");
             });
